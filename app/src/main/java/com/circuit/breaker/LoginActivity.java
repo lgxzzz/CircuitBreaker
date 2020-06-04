@@ -97,11 +97,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
             case R.id.reg_login_btn:
-                String codeStr = mPicCodeEd.getText().toString().trim();
-                if (null == codeStr || TextUtils.isEmpty(codeStr)) {
-                    Toast.makeText(LoginActivity.this, "请输入验证码", Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 DBManger.getInstance(LoginActivity.this).login(mName, mPassWord, new DBManger.IListener() {
                     @Override
                     public void onSuccess() {

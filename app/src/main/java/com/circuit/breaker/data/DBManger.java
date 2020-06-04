@@ -241,36 +241,31 @@ public class DBManger {
     //添加累计记录
     public void insertParams3(Params3 params3){
         try{
-            "(P3_ID varchar(20) primary key, " +
-                    "P3_DATA_CLEAR_COUNT varchar(20), " +  // 数据清零总次数
-                    "P3_ALL_TIAOZHA_COUNT varchar(20), " + // 总跳闸次数
-                    "P3_LOUDIANBISUO_TIAOZHA_COUNT varchar(20), " +  //  漏电闭锁跳闸次数
-                    "P3_LOUDIANBAOHU_TIAOZHA_COUNT varchar(20), " +  //  漏电保护跳闸次数
-                    "P3_GUOZHAI_TIAOZHA_COUNT varchar(20), " +  //  过载跳闸次数
-                    "P3_GUOYA_TIAOZHA_COUNT varchar(20), " +  //  过压跳闸次数
-                    "P3_SHOUDONG_TIAOZHA_COUNT varchar(20), " +  //  手动跳闸次数
-                    "P3_QUELING_TIAOZHA_COUNT varchar(20), " +  //  缺零跳闸次数
-                    "P3_SHIYAN_TIAOZHA_COUNT varchar(20), " +  //  实验跳闸次数
-                    "P3_DUANLU_TIAOZHA_COUNT varchar(20), " +  //  短路延时跳闸次数
-                    "P3_DUANLU_SHUNSHI_COUNT varchar(20), " +  //  短路瞬时次数
-                    "P3_QIANYA_TIAOZHA_COUNT varchar(20), " +  //  欠压跳闸次数
-                    "P3_QUEXIANG_TIAOZHA_COUNT varchar(20), " +  //  缺相跳闸次数
-                    "P3_EXCEP_INCREATE_COUNT varchar(20), " +  //  异常告警新增次数
-                    "P3_BAOHU_TOUTUI_COUNT varchar(20), " +  //  保护功能投退次数
-                    "P3_GAOYASHIFU_COUNT varchar(20), " +  //  高压失复电次数
-                    "P3_ZHAWEI_INCREATE_COUNT varchar(20), " +  //  闸位变化新增次数
-                    "P3_ZIJIAN_INCREATE_COUNT varchar(20), " +  //  自检保护新增次数
-                    "P3_BAOHUSHJIAN_INCREATE_COUNT varchar(20), " +  //  保护时间新增次数
-                    "P3_TUICHULOUDIANBAOHU_COUNT varchar(20), " +  //  退出漏电保护次数
-                    "P3_SHEBEIYUNXINGSHIJIAN_COUNT varchar(20))");// 设备运行时间累计
-
             SQLiteDatabase db = mDBHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("P3_ID",params3.getP3_ID());
-            values.put("PEST_TYPE",pest.getPEST_TYPE());
-            values.put("PEST_CONTEX",pest.getPEST_CONTEX());
-            values.put("PEST_URL",pest.getPEST_URL());
-            values.put("PEST_PIC_ID",pest.getPEST_PIC_ID()+"");
+            values.put("P3_DATA_CLEAR_COUNT",params3.getP3_DATA_CLEAR_COUNT());
+            values.put("P3_ALL_TIAOZHA_COUNT",params3.getP3_ALL_TIAOZHA_COUNT());
+            values.put("P3_LOUDIANBISUO_TIAOZHA_COUNT",params3.getP3_LOUDIANBISUO_TIAOZHA_COUNT());
+            values.put("P3_LOUDIANBAOHU_TIAOZHA_COUNT",params3.getP3_LOUDIANBAOHU_TIAOZHA_COUNT());
+            values.put("P3_GUOZHAI_TIAOZHA_COUNT",params3.getP3_GUOZHAI_TIAOZHA_COUNT());
+            values.put("P3_GUOYA_TIAOZHA_COUNT",params3.getP3_GUOYA_TIAOZHA_COUNT());
+            values.put("P3_SHOUDONG_TIAOZHA_COUNT",params3.getP3_SHOUDONG_TIAOZHA_COUNT());
+            values.put("P3_QUELING_TIAOZHA_COUNT",params3.getP3_QUELING_TIAOZHA_COUNT());
+            values.put("P3_SHIYAN_TIAOZHA_COUNT",params3.getP3_SHIYAN_TIAOZHA_COUNT());
+            values.put("P3_DUANLU_TIAOZHA_COUNT",params3.getP3_DUANLU_TIAOZHA_COUNT());
+            values.put("P3_DUANLU_SHUNSHI_COUNT",params3.getP3_DUANLU_SHUNSHI_COUNT());
+            values.put("P3_QIANYA_TIAOZHA_COUNT",params3.getP3_QIANYA_TIAOZHA_COUNT());
+            values.put("P3_QUEXIANG_TIAOZHA_COUNT",params3.getP3_QUEXIANG_TIAOZHA_COUNT());
+            values.put("P3_EXCEP_INCREATE_COUNT",params3.getP3_EXCEP_INCREATE_COUNT());
+            values.put("P3_BAOHU_TOUTUI_COUNT",params3.getP3_BAOHU_TOUTUI_COUNT());
+            values.put("P3_GAOYASHIFU_COUNT",params3.getP3_GAOYASHIFU_COUNT());
+            values.put("P3_ZHAWEI_INCREATE_COUNT",params3.getP3_ZHAWEI_INCREATE_COUNT());
+            values.put("P3_ZIJIAN_INCREATE_COUNT",params3.getP3_ZIJIAN_INCREATE_COUNT());
+            values.put("P3_BAOHUSHJIAN_INCREATE_COUNT",params3.getP3_BAOHUSHJIAN_INCREATE_COUNT());
+            values.put("P3_TUICHULOUDIANBAOHU_COUNT",params3.getP3_TUICHULOUDIANBAOHU_COUNT());
+            values.put("P3_SHEBEIYUNXINGSHIJIAN_COUNT",params3.getP3_SHEBEIYUNXINGSHIJIAN_COUNT());
+
             long code = db.insert(SQLiteDbHelper.TAB_PARAMS_3,null,values);
             db.close();
         }catch (Exception e){

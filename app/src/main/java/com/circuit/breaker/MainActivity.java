@@ -15,13 +15,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.circuit.breaker.bean.User;
-import com.circuit.breaker.data.DBManger;
-import com.circuit.breaker.fragement.DecodeFragment;
-import com.circuit.breaker.fragement.TreeLesionFragment;
-import com.circuit.breaker.fragement.PestFragment;
-import com.circuit.breaker.util.FragmentUtils;
-
 
 public class MainActivity extends Activity {
 
