@@ -1,6 +1,11 @@
 package com.circuit.breaker.bean;
 
-public class Params1 {
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Params1 implements Serializable {
     String P1_ID;
     String P1_ADDRESS;
     String P1_NUMBER;
@@ -20,6 +25,32 @@ public class Params1 {
     String P1_ZIDONGCHIONGHE_TIME;
     String P1_TYPE;
     String P1_ANZHUANG;
+
+    LinkedHashMap<String,Param> mNameMap = new LinkedHashMap<>();
+
+    public LinkedHashMap<String,Param> getNameMap(){
+        mNameMap.clear();
+        mNameMap.put("P1_ADDRESS", new Param("通信地址",P1_ADDRESS));
+        mNameMap.put("P1_NUMBER", new Param("设备号",P1_NUMBER));
+        mNameMap.put("P1_ZICAN_NUMBER", new Param("资产管理编码",P1_ZICAN_NUMBER));
+        mNameMap.put("P1_EX_VOL", new Param("额外电压",P1_EX_VOL));
+        mNameMap.put("P1_RATE_DIANLIU", new Param("额定电流",P1_RATE_DIANLIU));
+        mNameMap.put("P1_JIAKE_DIANLIU", new Param("壳架电流",P1_JIAKE_DIANLIU));
+        mNameMap.put("P1_DEVICE_NUMBER", new Param("设备型号",P1_DEVICE_NUMBER));
+        mNameMap.put("P1_PRODUCE_TIME", new Param("生产日期",P1_PRODUCE_TIME));
+        mNameMap.put("P1_AGREEN_VERSION", new Param("协议版本号",P1_AGREEN_VERSION));
+        mNameMap.put("P1_FAC_NUMBER", new Param("厂家工厂号码",P1_FAC_NUMBER));
+        mNameMap.put("P1_GUJIAN_VERSION", new Param("固件版本号",P1_GUJIAN_VERSION));
+        mNameMap.put("P1_YINGJIAN_VERSION", new Param("硬件版本号",P1_YINGJIAN_VERSION));
+        mNameMap.put("P1_EX_SHENGYUDIANLIU", new Param("额定剩余电流动作值",P1_EX_SHENGYUDIANLIU));
+        mNameMap.put("P1_EX_JIXIAN", new Param("额定极限不限定值",P1_EX_JIXIAN));
+        mNameMap.put("P1_EX_FENDUAN_TIME", new Param("额定分段时间",P1_EX_FENDUAN_TIME));
+        mNameMap.put("P1_ZIDONGCHIONGHE_TIME", new Param("自动重合闸时间范围",P1_ZIDONGCHIONGHE_TIME));
+        mNameMap.put("P1_TYPE", new Param("使用类别",P1_TYPE));
+        mNameMap.put("P1_ANZHUANG", new Param("安装相别",P1_ANZHUANG));
+
+        return mNameMap;
+    }
 
     public String getP1_ID() {
         return P1_ID;

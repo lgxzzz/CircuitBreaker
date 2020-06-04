@@ -13,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.circuit.breaker.bean.Params;
 import com.circuit.breaker.data.DBManger;
+import com.circuit.breaker.data.DataBase;
 
 /**
  * 选择查看界面
@@ -26,6 +28,7 @@ public class SelectPagerActivity extends Activity implements View.OnClickListene
     //累计记录
     private Button mParamsBtn3;
 
+    Params mParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class SelectPagerActivity extends Activity implements View.OnClickListene
     }
 
     public void init(){
+
+        mParams = DataBase.createDefaultParams();
 
         mParamsBtn1 = findViewById(R.id.param1_btn);
         mParamsBtn2 = findViewById(R.id.param2_btn);
@@ -47,16 +52,25 @@ public class SelectPagerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(SelectPagerActivity.this, ParamsActivity.class);
         switch (v.getId()){
             case R.id.param1_btn:
-                startActivity(new Intent(SelectPagerActivity.this, RegisterActivity.class));
+                intent.putExtra("title", "参数变量");
+                intent.putExtra("type", "参数变量");
+
                 break;
             case R.id.param2_btn:
-                startActivity(new Intent(SelectPagerActivity.this, RegisterActivity.class));
+                intent.putExtra("title", "当前变量");
+                intent.putExtra("type", "当前变量");
                 break;
             case R.id.param3_btn:
-                startActivity(new Intent(SelectPagerActivity.this, RegisterActivity.class));
+                intent.putExtra("title", "累计记录");
+                intent.putExtra("type", "累计记录");
                 break;
         }
+        Bundle b = new Bundle();
+        b.putSerializable("params",mParams);
+        intent.putExtras(b);
+        startActivity(intent);
     }
 }

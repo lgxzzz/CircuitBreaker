@@ -1,6 +1,9 @@
 package com.circuit.breaker.bean;
 
-public class Params {
+
+import java.io.Serializable;
+
+public class Params implements Serializable {
     Params1 params1;
     Params2 params2;
     Params3 params3;

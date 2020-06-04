@@ -25,8 +25,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private String mName;
     private String mPassWord;
     private Button mLoginBtn;
-    private ImageView mPicCodeImg;
-    private EditText mPicCodeEd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,15 +77,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                mPassWord = editable.toString();
             }
         });
-
-        mPicCodeImg = findViewById(R.id.pic_code_img);
-
-        mPicCodeEd = findViewById(R.id.pic_code_ed);
-        getCode();
-    }
-
-    //获取验证码
-    private void getCode() {
     }
 
     @Override

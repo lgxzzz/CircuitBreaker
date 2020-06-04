@@ -1,6 +1,9 @@
 package com.circuit.breaker.bean;
 
-public class Params3 {
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+
+public class Params3 implements Serializable {
     String P3_ID;
     String P3_DATA_CLEAR_COUNT;
     String P3_ALL_TIAOZHA_COUNT;
@@ -23,6 +26,35 @@ public class Params3 {
     String P3_BAOHUSHJIAN_INCREATE_COUNT;
     String P3_TUICHULOUDIANBAOHU_COUNT;
     String P3_SHEBEIYUNXINGSHIJIAN_COUNT;
+
+    LinkedHashMap<String,Param> mNameMap = new LinkedHashMap<>();
+
+    public LinkedHashMap<String,Param> getNameMap(){
+        mNameMap.clear();
+        mNameMap.put("P3_DATA_CLEAR_COUNT", new Param("数据清零总次数",P3_DATA_CLEAR_COUNT));
+        mNameMap.put("P3_ALL_TIAOZHA_COUNT", new Param("总跳闸次数",P3_ALL_TIAOZHA_COUNT));
+        mNameMap.put("P3_LOUDIANBISUO_TIAOZHA_COUNT", new Param("漏电闭锁跳闸次数",P3_LOUDIANBISUO_TIAOZHA_COUNT));
+        mNameMap.put("P3_LOUDIANBAOHU_TIAOZHA_COUNT", new Param("漏电保护跳闸次数",P3_LOUDIANBAOHU_TIAOZHA_COUNT));
+        mNameMap.put("P3_GUOZHAI_TIAOZHA_COUNT", new Param("过载跳闸次数",P3_GUOZHAI_TIAOZHA_COUNT));
+        mNameMap.put("P3_GUOYA_TIAOZHA_COUNT", new Param("过压跳闸次数",P3_GUOYA_TIAOZHA_COUNT));
+        mNameMap.put("P3_SHOUDONG_TIAOZHA_COUNT", new Param("手动跳闸次数",P3_SHOUDONG_TIAOZHA_COUNT));
+        mNameMap.put("P3_QUELING_TIAOZHA_COUNT", new Param("缺零跳闸次数",P3_QUELING_TIAOZHA_COUNT));
+        mNameMap.put("P3_SHIYAN_TIAOZHA_COUNT", new Param("实验跳闸次数",P3_SHIYAN_TIAOZHA_COUNT));
+        mNameMap.put("P3_DUANLU_TIAOZHA_COUNT", new Param("短路延时跳闸次数",P3_DUANLU_TIAOZHA_COUNT));
+        mNameMap.put("P3_DUANLU_SHUNSHI_COUNT", new Param("短路瞬时次数",P3_DUANLU_SHUNSHI_COUNT));
+        mNameMap.put("P3_QIANYA_TIAOZHA_COUNT", new Param("欠压跳闸次数",P3_QIANYA_TIAOZHA_COUNT));
+        mNameMap.put("P3_QUEXIANG_TIAOZHA_COUNT", new Param("缺相跳闸次数",P3_QUEXIANG_TIAOZHA_COUNT));
+        mNameMap.put("P3_EXCEP_INCREATE_COUNT", new Param("异常告警新增次数",P3_EXCEP_INCREATE_COUNT));
+        mNameMap.put("P3_BAOHU_TOUTUI_COUNT", new Param("保护功能投退次数",P3_BAOHU_TOUTUI_COUNT));
+        mNameMap.put("P3_GAOYASHIFU_COUNT", new Param("高压失复电次数",P3_GAOYASHIFU_COUNT));
+        mNameMap.put("P3_ZHAWEI_INCREATE_COUNT", new Param("闸位变化新增次数",P3_ZHAWEI_INCREATE_COUNT));
+        mNameMap.put("P3_ZIJIAN_INCREATE_COUNT", new Param("自检保护新增次数",P3_ZIJIAN_INCREATE_COUNT));
+        mNameMap.put("P3_BAOHUSHJIAN_INCREATE_COUNT", new Param("保护时间新增次数",P3_BAOHUSHJIAN_INCREATE_COUNT));
+        mNameMap.put("P3_TUICHULOUDIANBAOHU_COUNT", new Param("退出漏电保护次数",P3_TUICHULOUDIANBAOHU_COUNT));
+        mNameMap.put("P3_SHEBEIYUNXINGSHIJIAN_COUNT", new Param("设备运行时间累计",P3_SHEBEIYUNXINGSHIJIAN_COUNT));
+
+        return mNameMap;
+    }
 
     public String getP3_ID() {
         return P3_ID;
